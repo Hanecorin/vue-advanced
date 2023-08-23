@@ -5,26 +5,29 @@ import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
 
 
+
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
-    // path: url 주소
-      path: '/news',
-    // component: url 주소로 갔을 때 표시될 컴포넌트
+      // path: url 주소
+      path: "/news",
+      // component: url 주소로 갔을 때 표시될 컴포넌트
       component: NewsView,
     },
 
     {
-      path: '/ask',
+      path: "/ask",
       component: AskView,
     },
-    
+
     {
-      path: '/jobs',
+      path: "/jobs",
       component: JobsView,
     },
+    
   ],
 });
 
