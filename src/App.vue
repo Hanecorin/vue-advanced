@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <tool-bar></tool-bar>
-    <router-view></router-view>
+    <transition name="v">
+      <router-view></router-view>
+    </transition>
+    
     
   </div>
 </template>
@@ -20,5 +23,15 @@ export default {
 body{
   padding: 0;
   margin: 0;
+}
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
