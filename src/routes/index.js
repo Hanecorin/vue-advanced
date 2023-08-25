@@ -1,33 +1,45 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import NewsView from '../views/NewsView.vue'
-import AskView from "../views/AskView.vue";
-import JobsView from "../views/JobsView.vue";
-
-
+import UserView from "../views/UserView.vue";
+import ItemView from "../views/ItemView.vue";
+import createListView from '../views/CreateListView';
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      // path: url 주소
+      path: "/",
+      redirect: "/news",
+    },
+    {
       path: "/news",
-      // component: url 주소로 갔을 때 표시될 컴포넌트
-      component: NewsView,
+      name: "news",
+      component: createListView("NewsView"),
     },
 
     {
       path: "/ask",
-      component: AskView,
+      name: "ask",
+      component: createListView("AskView"),
     },
 
     {
       path: "/jobs",
-      component: JobsView,
+      name: "jobs",
+      component: createListView("JobsView"),
     },
-    
+
+    {
+      path: "/user/:id",
+      component: UserView,
+    },
+
+    {
+      path: "/item/:id",
+      component: ItemView,
+    },
   ],
 });
 
