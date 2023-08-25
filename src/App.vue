@@ -24,6 +24,17 @@ body{
   padding: 0;
   margin: 0;
 }
+a{
+  color: #34495e;
+  text-decoration: none;
+}
+a:hover{
+  color: #42b883;
+  text-decoration: underline;
+}
+a.router-link-exact-active{
+  text-decoration: underline;
+}
 /* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
