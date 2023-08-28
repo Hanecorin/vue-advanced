@@ -11,6 +11,7 @@ export default {
   components: {
     ListItem,
   },
+  
   mixins: [ListMixin]
   // created() {
   //   bus.$emit('start:spinner');
